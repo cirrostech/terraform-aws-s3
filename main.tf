@@ -4,6 +4,6 @@ resource "random_id" "id" {
 
 
 resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "${var.bucket_name}-${random_id.id.hex}"
+  bucket = "fusion-${random_id.id.hex}"
   tags = var.tags
 }
