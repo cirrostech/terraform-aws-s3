@@ -1,11 +1,9 @@
-
-resource "random_string" "random_suffix" {
-  special = false
-  number  = true
-  length  = 6
+resource "random_id" "id" {
+	  byte_length = 8
 }
 
+
 resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "${var.bucket_name}-${random_string.random_suffix.result}"
+  bucket = "${var.bucket_name}-${random_id.id.hex}"
   tags = var.tags
 }
