@@ -1,5 +1,5 @@
 resource "random_id" "id" {
-	  byte_length = 8
+  byte_length = 8
 }
 
 resource "aws_s3_bucket" "s3_bucket" {
